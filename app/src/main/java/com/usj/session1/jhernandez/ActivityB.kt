@@ -3,12 +3,19 @@ package com.usj.session1.jhernandez
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import com.usj.session1.jhernandez.databinding.ActivityBBinding
 
 class ActivityB : AppCompatActivity() {
 
     private val view by lazy {
         ActivityBBinding.inflate(layoutInflater)
+    }
+
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == RESULT_OK) {
+            view.txtResult.text = it.data?.getStringExtra(RESULT_KEY)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +29,7 @@ class ActivityB : AppCompatActivity() {
 
         view.btnBtoD.setOnClickListener {
             val intent = Intent(this, ActivityD::class.java)
-            startActivityForResult(intent, 1)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1) {
-            view.txtResult.text = data?.getStringExtra(RESULT_KEY)
+            launcher.launch(intent)
         }
     }
 }
