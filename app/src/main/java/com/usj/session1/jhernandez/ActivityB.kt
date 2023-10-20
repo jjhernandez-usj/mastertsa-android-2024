@@ -29,7 +29,7 @@ class ActivityB : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1) {
-            view.txtResult.text = data?.getStringExtra("result")
+            view.txtResult.text = data?.getStringExtra(RESULT_KEY)
         }
     }
 }

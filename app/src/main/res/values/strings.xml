@@ -8,4 +8,6 @@
     <string name="call">Llamar</string>
     <string name="mail">Mail</string>
     <string name="activity_b_title">Esto es la actividad B</string>
+    <string name="button_for_result">Button For Result</string>
+    <string name="type_text">Type text</string>
 </resources>
