@@ -1,7 +1,7 @@
 package com.usj.session1.jhernandez
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.usj.session1.jhernandez.databinding.ActivityDBinding
 
 class ActivityD : AppCompatActivity() {

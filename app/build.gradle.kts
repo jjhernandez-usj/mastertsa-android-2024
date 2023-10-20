@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.usj.session1.jhernandez"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.usj.session1.jhernandez"

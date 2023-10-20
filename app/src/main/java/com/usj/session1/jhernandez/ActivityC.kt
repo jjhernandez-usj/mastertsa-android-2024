@@ -1,8 +1,9 @@
 package com.usj.session1.jhernandez
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.usj.session1.jhernandez.databinding.ActivityCBinding
 
 
@@ -22,9 +23,7 @@ class ActivityC : AppCompatActivity() {
         }
 
         view.btnCall.setOnClickListener {
-            val intent = Intent()
-            intent.action=Intent.ACTION_DIAL
-            intent.putExtra(Intent.EXTRA_PHONE_NUMBER, 123)
+            val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "123", null))
             startActivity(intent)
         }
     }

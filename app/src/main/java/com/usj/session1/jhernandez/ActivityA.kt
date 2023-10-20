@@ -1,9 +1,9 @@
 package com.usj.session1.jhernandez
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.usj.session1.jhernandez.databinding.ActivityABinding
 
 class ActivityA : AppCompatActivity() {
