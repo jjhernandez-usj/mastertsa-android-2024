@@ -1,21 +1,31 @@
 package com.usj.session1.jhernandez
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
-import com.usj.session1.jhernandez.databinding.ActivityMainBinding
+import com.usj.session1.jhernandez.databinding.ActivityABinding
 
-class MainActivity : AppCompatActivity() {
+class ActivityA : AppCompatActivity() {
 
     private val view by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+        ActivityABinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(view.root)
-        view.tvHelloWorld.text = "Hola Samuel"
+
+        view.btnAtoB.setOnClickListener {
+            val intent = Intent(this, ActivityB::class.java)
+            startActivity(intent)
+        }
+
+        view.btnAtoC.setOnClickListener {
+            val intent = Intent(this, ActivityC::class.java)
+            startActivity(intent)
+        }
+
         Log.v("MTSA", "onCreate")
     }
 
@@ -42,10 +52,5 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.v("MTSA", "onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.v("MTSA", "onDestroy")
     }
 }
