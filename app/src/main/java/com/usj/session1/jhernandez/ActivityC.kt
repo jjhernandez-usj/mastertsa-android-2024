@@ -26,5 +26,24 @@ class ActivityC : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "123", null))
             startActivity(intent)
         }
+
+        view.btnMail.setOnClickListener {
+
+            val emailIntent = Intent(Intent.ACTION_SEND)
+
+            emailIntent.type = "message/rfc822"
+
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("recipient@example.com"))
+
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject of the Email")
+
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "This is the email body.")
+
+            if (emailIntent.resolveActivity(packageManager) != null) {
+
+                startActivity(emailIntent)
+            }
+        }
+
     }
 }
